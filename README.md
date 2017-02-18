@@ -1,6 +1,6 @@
-# CSC-4263-Project: Picture Day Team
+# CSC-4263-Project: Team Clean
 #Team Lead: Hunter Barnaba
 #Artist: Ethan Leblanc
-#: Joshua Lee
-#: John Chris
-#: Alaijah Moses
+#Lead Programmer: John Chris
+#Programmer: Alaijah Moses
+#Level Design: Joshua Lee
