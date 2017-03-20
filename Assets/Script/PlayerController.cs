@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody2D rb2d;
     public float speed;
     public Boundary boundary;
+	public Bullet bullet; 
+	public Transform bulletSpawn;
 
 	// Use this for initialization
 	void Start ()
@@ -32,5 +34,11 @@ public class PlayerController : MonoBehaviour {
             Mathf.Clamp(rb2d.position.x, boundary.xMin, boundary.xMax),
             Mathf.Clamp(rb2d.position.y, boundary.yMin, boundary.yMax)
         );
+
+		if(Input.GetKeyDown("space"))
+			{
+				Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
+			}
     }
+		
 }
