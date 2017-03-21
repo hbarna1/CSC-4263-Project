@@ -13,13 +13,11 @@ public class Bullet : MonoBehaviour {
 		bullet = gameObject.GetComponent<Rigidbody2D> ();
 		bullet.AddForce(new Vector2( speed, 0));
 	}
+		
 
-
-
-
-	void onBecomeInvisible()
+	void OnBecameInvisible()
 	{
-		Destroy (bullet);
+		Destroy (bullet.gameObject);
 	}
 
 } 
