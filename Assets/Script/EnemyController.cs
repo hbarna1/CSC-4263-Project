@@ -8,6 +8,9 @@ public class EnemyController : MonoBehaviour {
 	public Bullet bullet;
 	public Transform EnemyBulletSpawn;
 	public Transform Player;
+	public float maxMoveDistance;
+	public float speed; 
+	Vector2 origin;
 	float nextFire = 0;
 
 	
@@ -23,6 +26,6 @@ public class EnemyController : MonoBehaviour {
 			Instantiate (bullet, EnemyBulletSpawn.position, EnemyBulletSpawn.rotation);
 		}
 
-
 	}
+
 }
