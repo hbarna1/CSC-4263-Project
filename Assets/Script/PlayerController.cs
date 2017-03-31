@@ -14,7 +14,13 @@ public class PlayerController : MonoBehaviour {
     public float speed;
     public Boundary boundary;
 	public Bullet bullet; 
+	public float bulletFireRate;
+	public float grenadeFireRate;
+	public Grenade grenade;
 	public Transform bulletSpawn;
+	public Transform grenadeSpawn;
+	public float keyDelay = 0.5f; // 1 second
+	private float timePassed = 0f;
 
 	// Use this for initialization
 	void Start ()
@@ -35,10 +41,18 @@ public class PlayerController : MonoBehaviour {
             Mathf.Clamp(rb2d.position.y, boundary.yMin, boundary.yMax)
         );
 
-		if(Input.GetKeyDown("space"))
-			{
-				Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
-			}
+		timePassed += Time.deltaTime;
+		if(Input.GetKey(KeyCode.Space) && timePassed >= keyDelay)
+		{
+			Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
+			timePassed = 0f;
+		}
+
+		if(Input.GetKey(KeyCode.G) && timePassed >= keyDelay)
+		{
+			Instantiate(grenade, grenadeSpawn.position, grenadeSpawn.rotation);
+			timePassed = 0f;
+		}
     }
 		
 }
