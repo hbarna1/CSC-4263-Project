@@ -20,7 +20,8 @@ public class PlayerController : MonoBehaviour {
 	public Transform bulletSpawn;
 	public Transform grenadeSpawn;
 	public float keyDelay = 0.5f; // 1 second
-	private float timePassed = 0f;
+	private float timePassed = 0f; 
+	private Boots boots;
 
 	// Use this for initialization
 	void Start ()
@@ -53,6 +54,11 @@ public class PlayerController : MonoBehaviour {
 			Instantiate(grenade, grenadeSpawn.position, grenadeSpawn.rotation);
 			timePassed = 0f;
 		}
+
+		if (boots.hasBoots) {
+			//add stuff to ignore collison of mudPuddle, then set hasBoots to false again. 
+		}
+
     }
 		
 }
