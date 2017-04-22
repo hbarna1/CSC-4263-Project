@@ -5,11 +5,11 @@ using UnityEngine;
 public class BootsPowerup : MonoBehaviour { 
 	//private Rigidbody2D bootsPowerup;
 	public Boots boots; 
-
+	GameObject player;
 
 	// Use this for initialization
 	void Start () {
-		GameObject player = GameObject.Find ("Player");
+	    player = GameObject.Find ("Player");
 		boots = player.GetComponent<Boots> ();
 	}
 	
@@ -21,7 +21,7 @@ public class BootsPowerup : MonoBehaviour {
 	**/
 
 	//need to add a timer or something to limit the use of the boots
-	void OnTriggerEnter2D(Collider2D other)
+	void OnTriggerEnter2D(Collider2D player)
 	{
 		boots.hasBoots = true;
 		Destroy (gameObject); 

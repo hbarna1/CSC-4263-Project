@@ -55,9 +55,9 @@ public class PlayerController : MonoBehaviour {
 			timePassed = 0f;
 		}
 
-		if (boots.hasBoots) {
+		//if (boots.hasBoots) {
 			//add stuff to ignore collison of mudPuddle, then set hasBoots to false again. 
-		}
+	//	}
 
     }
 		
