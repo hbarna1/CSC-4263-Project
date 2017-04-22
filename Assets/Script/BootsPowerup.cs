@@ -21,10 +21,12 @@ public class BootsPowerup : MonoBehaviour {
 	**/
 
 	//need to add a timer or something to limit the use of the boots
-	void OnTriggerEnter2D(Collider2D player)
+	void OnTriggerEnter2D(Collider2D other)
 	{
-		boots.hasBoots = true;
-		Destroy (gameObject); 
+		if (other.gameObject.tag == "Player") {
+			boots.hasBoots = true;
+			Destroy (gameObject); 
+		}
 	}
 }
 	
