@@ -54,10 +54,7 @@ public class PlayerController : MonoBehaviour {
 			Instantiate(grenade, grenadeSpawn.position, grenadeSpawn.rotation);
 			timePassed = 0f;
 		}
-
-		//if (boots.hasBoots) {
-			//add stuff to ignore collison of mudPuddle, then set hasBoots to false again. 
-	//	}
+			
 
     }
 		
