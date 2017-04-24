@@ -29,9 +29,6 @@ public class Scrolling : MonoBehaviour {
 
         this.position.x += this.speed * Time.deltaTime;
 
-        if (this.position.x > this.screenRadius)
-            this.position.x = -this.screenRadius;
-
         this.transform.position = this.position;
     }
 }
