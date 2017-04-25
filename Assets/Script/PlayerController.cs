@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
+
 [System.Serializable]
 public class Boundary
 {
@@ -54,8 +56,12 @@ public class PlayerController : MonoBehaviour {
 			Instantiate(grenade, grenadeSpawn.position, grenadeSpawn.rotation);
 			timePassed = 0f;
 		}
-			
 
     }
-		
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        SceneManager.LoadScene(3);
+    }
+
 }
