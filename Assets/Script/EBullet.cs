@@ -25,6 +25,7 @@ public class EBullet : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision)
+<<<<<<< HEAD
     {
         if (collision.gameObject.tag == "Player")
         {
@@ -34,6 +35,15 @@ public class EBullet : MonoBehaviour
         }
         else if (collision.gameObject.tag == "PBullet")
             ;
+=======
+    {
+		if (collision.gameObject.tag == "Player") {
+			Destroy (collision.gameObject);
+			Destroy (bullet.gameObject);
+		}
+		else if (collision.gameObject.tag == "PBullet")
+			Physics.IgnoreCollision (PBullet.collider, collider);
+>>>>>>> origin/master
         else
             Destroy(bullet.gameObject);
     }
