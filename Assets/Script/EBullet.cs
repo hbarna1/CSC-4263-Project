@@ -24,13 +24,12 @@ public class EBullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            Destroy(collision.gameObject);
-            Destroy(bullet.gameObject);
-        }
-        else if (collision.gameObject.tag == "PBullet")
-            ;
+		if (collision.gameObject.tag == "Player") {
+			Destroy (collision.gameObject);
+			Destroy (bullet.gameObject);
+		}
+		else if (collision.gameObject.tag == "PBullet")
+			Physics.IgnoreCollision (PBullet.collider, collider);
         else
             Destroy(bullet.gameObject);
     }
