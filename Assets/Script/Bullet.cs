@@ -29,7 +29,7 @@ public class Bullet : MonoBehaviour {
             Destroy(bullet.gameObject);
         }
         else if (collision.gameObject.tag == "EBullet")
-			Physics.IgnoreCollision(EBullet.collider, collider);
+            ;
         else
             Destroy(bullet.gameObject);
     }
