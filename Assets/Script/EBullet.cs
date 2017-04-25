@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-using UnityEngine.SceneManagement;
-
 public class EBullet : MonoBehaviour
 {
 
@@ -30,7 +28,6 @@ public class EBullet : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(bullet.gameObject);
-            SceneManager.LoadScene(3);
         }
         else if (collision.gameObject.tag == "PBullet")
             ;

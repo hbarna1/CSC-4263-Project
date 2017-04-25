@@ -16,12 +16,12 @@ public class Bullet : MonoBehaviour {
 	}
 		
 
-	/*void OnBecameInvisible()
+	void OnBecameInvisible()
 	{
 		Destroy (bullet.gameObject);
 	}
-   */
-   /* void OnCollisionEnter2D(Collision2D collision)
+
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
@@ -33,5 +33,5 @@ public class Bullet : MonoBehaviour {
         else
             Destroy(bullet.gameObject);
     }
-    */
+
 } 
