@@ -15,8 +15,8 @@ public class MovingEnemeyController : MonoBehaviour
     float nextFire = 0;
 
     int direction = 1; //int direction where 0 is stay, 1 up, -1 down    
-    int top = 3;
-    int bottom = -3;
+    int top = 8;
+    int bottom = -8;
 
     // Update is called once per frame
     void Update()
