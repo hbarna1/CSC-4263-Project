@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour {
+public class Bullet : MonoBehaviour
+{
 
 	private Rigidbody2D bullet;
 	public float speed;  
@@ -16,11 +17,11 @@ public class Bullet : MonoBehaviour {
 	}
 		
 
-	void OnBecameInvisible()
+	/*void OnBecameInvisible()
 	{
 		Destroy (bullet.gameObject);
 	}
-
+    */
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
@@ -30,8 +31,8 @@ public class Bullet : MonoBehaviour {
         }
         else if (collision.gameObject.tag == "EBullet")
             ;
-        else
-            Destroy(bullet.gameObject);
+       // else
+        //    Destroy(bullet.gameObject);
     }
 
 } 
