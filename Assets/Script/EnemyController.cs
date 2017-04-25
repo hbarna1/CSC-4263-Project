@@ -13,18 +13,18 @@ public class EnemyController : MonoBehaviour {
 	Vector2 origin;
 	float nextFire = 0;
 
-	
 	// Update is called once per frame
 	void Update ()
 	{
+            //transform.LookAt (Player);
 
-		//transform.LookAt (Player);
-
-		if (Time.time > nextFire) {
+            if (Time.time > nextFire)
+        {
 			nextFire = Time.time + fireRate;
 
 			Instantiate (bullet, EnemyBulletSpawn.position, EnemyBulletSpawn.rotation);
 		}
+
 
 	}
 

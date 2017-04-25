@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
+
 public class MudPuddle : MonoBehaviour {
 
 	private Rigidbody2D mudPuddle;  
@@ -26,7 +28,8 @@ public class MudPuddle : MonoBehaviour {
 				// needs to cause death for player
 
 				Destroy (other.gameObject);
-			}
+                SceneManager.LoadScene(3);
+            }
 		}
 	}
 }

@@ -6,8 +6,8 @@ public class Bullet : MonoBehaviour
 {
 
 	private Rigidbody2D bullet;
-	public float speed;  
-
+	public float speed;
+    Animator anim;
 
 	// Use this for initialization
 	void Start ()
@@ -26,13 +26,12 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
+            //anim.SetTrigger(1);
             Destroy(collision.gameObject);
             Destroy(bullet.gameObject);
         }
         else if (collision.gameObject.tag == "EBullet")
-            ;
-       // else
-        //    Destroy(bullet.gameObject);
+                 Destroy(bullet.gameObject);
     }
 
 } 

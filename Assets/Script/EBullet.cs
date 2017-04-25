@@ -22,7 +22,6 @@ public class EBullet : MonoBehaviour
     void OnBecameInvisible()
     {
         Destroy(bullet.gameObject);
-        SceneManager.LoadScene(3);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -31,6 +30,7 @@ public class EBullet : MonoBehaviour
             {
                 Destroy(collision.gameObject);
                 Destroy(bullet.gameObject);
+                SceneManager.LoadScene(3);
             }
             else if (collision.gameObject.tag == "PBullet")
             {
