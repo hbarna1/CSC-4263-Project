@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
 
 	void OnBecameInvisible()
 	{
-		//Destroy (bullet.gameObject);
+		Destroy (bullet.gameObject);
 	}
     
     void OnCollisionEnter2D(Collision2D collision)
