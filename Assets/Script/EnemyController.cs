@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour {
 	Vector2 origin;
 	float nextFire = 0;
     private Animator anim;
+	private bool dead = false;
 
     int DestroyTime = 1;
 
@@ -24,13 +25,14 @@ public class EnemyController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-            if (Time.time > nextFire)
-        {
-			nextFire = Time.time + fireRate;
+		if (!dead)
+		{
+			if (Time.time > nextFire) {
+				nextFire = Time.time + fireRate;
 
-			if (transform.position.x - GameObject.Find("Player").transform.position.x < 50) 
-			{
-				Instantiate (bullet, EnemyBulletSpawn.position, EnemyBulletSpawn.rotation);
+				if (transform.position.x - GameObject.Find ("Player").transform.position.x < 50) {
+					Instantiate (bullet, EnemyBulletSpawn.position, EnemyBulletSpawn.rotation);
+				}
 			}
 		}
     }
@@ -39,6 +41,7 @@ public class EnemyController : MonoBehaviour {
     {
         if (collision.gameObject.tag == "PBullet")
         {
+			dead = true;
             anim = this.gameObject.GetComponent<Animator>();
             anim.Play("Die");
             anim.SetTrigger("Die");
@@ -47,6 +50,7 @@ public class EnemyController : MonoBehaviour {
 
         if (collision.gameObject.tag == "Grenade")
         {
+			dead = true;
             anim = this.gameObject.GetComponent<Animator>();
             anim.Play("Die");
             anim.SetTrigger("Die");
