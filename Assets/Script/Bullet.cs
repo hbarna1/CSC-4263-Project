@@ -30,7 +30,7 @@ public class Bullet : MonoBehaviour
          //  anim.Play("Die");
          //  anim.SetTrigger("Die");
          // Destroy(collision.gameObject);
-         //  Destroy(bullet.gameObject);
+            Destroy(bullet.gameObject);
         }
         else if (collision.gameObject.tag == "EBullet")
                  Destroy(bullet.gameObject);
