@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
 
 	void OnBecameInvisible()
 	{
-		Destroy (bullet.gameObject);
+	   Destroy (this.gameObject);
 	}
     
     void OnCollisionEnter2D(Collision2D collision)
@@ -30,11 +30,11 @@ public class Bullet : MonoBehaviour
             //  anim.Play("Die");
             //  anim.SetTrigger("Die");
             // Destroy(collision.gameObject);
-            Destroy(bullet.gameObject);
+            Destroy(this.gameObject);
         }
         else if (collision.gameObject.tag == "EBullet" || collision.gameObject.tag == "Barricade")
         {
-            Destroy(bullet.gameObject);
+           Destroy(this.gameObject);
         }
     }
 
