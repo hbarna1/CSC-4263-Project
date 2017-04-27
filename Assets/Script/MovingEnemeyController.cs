@@ -13,10 +13,12 @@ public class MovingEnemeyController : MonoBehaviour
     public float speed;
     Vector2 origin;
     float nextFire = 0;
+    private Animator anim;
 
     int direction = 1; //int direction where 0 is stay, 1 up, -1 down    
     int top = 8;
     int bottom = -8;
+    int DestroyTime = 2;
 
     // Update is called once per frame
     void Update()
@@ -29,9 +31,7 @@ public class MovingEnemeyController : MonoBehaviour
             nextFire = Time.time + fireRate;
 
             Instantiate(bullet, EnemyBulletSpawn.position, EnemyBulletSpawn.rotation);
-
         }
-
 
         if (transform.position.y >= top)
             direction = -1;
@@ -40,6 +40,24 @@ public class MovingEnemeyController : MonoBehaviour
             direction = 1;
 
         transform.Translate(0, speed * direction * Time.deltaTime, 0);
+    }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "PBullet")
+        {
+            anim = this.gameObject.GetComponent<Animator>();
+            anim.Play("Die");
+            anim.SetTrigger("Die");
+            Destroy(this.gameObject, DestroyTime);
+        }
+
+        if (collision.gameObject.tag == "Grenade")
+        {
+            anim = this.gameObject.GetComponent<Animator>();
+            anim.Play("Die");
+            anim.SetTrigger("Die");
+            Destroy(this.gameObject, DestroyTime);
+        }
     }
 }

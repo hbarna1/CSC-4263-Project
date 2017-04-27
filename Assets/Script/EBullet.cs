@@ -39,15 +39,12 @@ public class EBullet : MonoBehaviour
                     Destroy(collision.gameObject);
                     Destroy(bullet.gameObject);
                 }
-                // else if (collision.gameObject.tag == "PBullet")
-                //    Physics.IgnoreCollision(PBullet.collider, collider);
+             //    else if (collision.gameObject.tag == "PBullet")
+                         // Physics.IgnoreCollision(PBullet.collider, collider);
                 else
                     Destroy(bullet.gameObject);
             }
-
-
         else
             Destroy(bullet.gameObject);
-
     }
 }

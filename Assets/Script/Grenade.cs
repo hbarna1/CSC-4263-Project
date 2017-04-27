@@ -8,9 +8,12 @@ public class Grenade : MonoBehaviour {
 	private Rigidbody2D grenade;
 	public float xSpeed; 
 	public float ySpeed;
+    private Animator anim;
 
-	// Use this for initialization
-	void Start () {
+    int DestroyTime = 1;
+
+    // Use this for initialization
+    void Start () {
 		grenade = gameObject.GetComponent<Rigidbody2D> ();
 		grenade.velocity = new Vector2 (xSpeed,ySpeed);
 	}
@@ -23,6 +26,9 @@ public class Grenade : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		Destroy (grenade.gameObject);
+        anim = this.gameObject.GetComponent<Animator>();
+        anim.Play("GrenadeExplosion");
+        anim.SetTrigger("GrenadeExplosion");
+        Destroy (grenade.gameObject, DestroyTime);
 	}
 }
