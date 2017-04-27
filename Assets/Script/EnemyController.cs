@@ -28,7 +28,10 @@ public class EnemyController : MonoBehaviour {
         {
 			nextFire = Time.time + fireRate;
 
-			Instantiate (bullet, EnemyBulletSpawn.position, EnemyBulletSpawn.rotation);
+			if (transform.position.x - GameObject.Find("Player").transform.position.x < 50) 
+			{
+				Instantiate (bullet, EnemyBulletSpawn.position, EnemyBulletSpawn.rotation);
+			}
 		}
     }
 
