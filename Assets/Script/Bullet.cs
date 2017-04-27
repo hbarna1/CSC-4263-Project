@@ -26,14 +26,16 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-         //  anim = this.gameObject.GetComponent<Animator>();
-         //  anim.Play("Die");
-         //  anim.SetTrigger("Die");
-         // Destroy(collision.gameObject);
+            //  anim = this.gameObject.GetComponent<Animator>();
+            //  anim.Play("Die");
+            //  anim.SetTrigger("Die");
+            // Destroy(collision.gameObject);
             Destroy(bullet.gameObject);
         }
-        else if (collision.gameObject.tag == "EBullet")
-                 Destroy(bullet.gameObject);
+        else if (collision.gameObject.tag == "EBullet" || collision.gameObject.tag == "Barricade")
+        {
+            Destroy(bullet.gameObject);
+        }
     }
 
 } 
