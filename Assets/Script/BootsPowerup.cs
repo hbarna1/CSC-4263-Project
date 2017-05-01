@@ -6,9 +6,10 @@ public class BootsPowerup : MonoBehaviour {
 	//private Rigidbody2D bootsPowerup;
 	public Boots boots; 
 	GameObject player;
+    private Animator anim;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 	    player = GameObject.Find ("Player");
 		boots = player.GetComponent<Boots> ();
 	}
@@ -25,8 +26,11 @@ public class BootsPowerup : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Player") {
 			boots.hasBoots = true;
-			Destroy (gameObject); 
-		}
+			Destroy (gameObject);
+            anim = player.gameObject.GetComponent<Animator>();
+            anim.Play("PlayerBoots");
+            anim.SetTrigger("PlayerBoots");
+        }
 	}
 }
 	

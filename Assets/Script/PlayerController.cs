@@ -22,9 +22,10 @@ public class PlayerController : MonoBehaviour {
 	public float keyDelay = 0.5f; // 1 second
 	private float timePassed = 0f; 
 	private Boots boots;
+    private Animator anim;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         rb2d = GetComponent<Rigidbody2D>();
 	}
@@ -57,5 +58,5 @@ public class PlayerController : MonoBehaviour {
 			
 
     }
-		
+
 }
