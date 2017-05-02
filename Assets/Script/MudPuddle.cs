@@ -22,11 +22,13 @@ public class MudPuddle : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		if (other.gameObject.tag == "Player") {
-			
-			if (boots.hasBoots == false) {
-				// needs to cause death for player
+		if (other.gameObject.tag == "Player")
+        {
+            player.gameObject.GetComponent< Animator > ().Play("PlayerWalk");
 
+            if (boots.hasBoots == false)
+            {
+				// needs to cause death for player
 				Destroy (other.gameObject);
                 SceneManager.LoadScene(3);
             }
