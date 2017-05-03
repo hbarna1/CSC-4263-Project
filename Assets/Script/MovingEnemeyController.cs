@@ -20,11 +20,15 @@ public class MovingEnemeyController : MonoBehaviour
     int top = 8;
     int bottom = -8;
     int DestroyTime = 2;
+	//bool cheat = false;
 
     // Update is called once per frame
     void Update()
     {
 
+		//if (Input.GetKeyDown (KeyCode.O)) {
+		//	cheat = true;
+		//}
         //transform.LookAt (Player);
 		if (!dead)
 		{
@@ -51,21 +55,36 @@ public class MovingEnemeyController : MonoBehaviour
     {
         if (collision.gameObject.tag == "PBullet")
         {
+			/**
 			dead = true;
-			
             anim = this.gameObject.GetComponent<Animator>();
             anim.Play("Die");
             anim.SetTrigger("Die");
             Destroy(this.gameObject, DestroyTime);
+            **/
+			Dead ();
         }
 
         if (collision.gameObject.tag == "Grenade")
         {
+			/**
 			dead = true;
             anim = this.gameObject.GetComponent<Animator>();
             anim.Play("Die");
             anim.SetTrigger("Die");
             Destroy(this.gameObject, DestroyTime);
+            **/
+			Dead ();
         }
     }
+
+	public void Dead()
+	{
+		dead = true;
+		anim = this.gameObject.GetComponent<Animator>();
+		anim.Play("Die");
+		anim.SetTrigger("Die");
+		Destroy(this.gameObject, DestroyTime);
+	}
+
 }

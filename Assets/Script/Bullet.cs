@@ -32,7 +32,7 @@ public class Bullet : MonoBehaviour
             // Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }
-        else if (collision.gameObject.tag == "EBullet" || collision.gameObject.tag == "Barricade")
+		else if (collision.gameObject.tag == "EBullet" || collision.gameObject.tag == "Barricade"|| collision.gameObject.tag == "Boulder")
         {
            Destroy(this.gameObject);
         }

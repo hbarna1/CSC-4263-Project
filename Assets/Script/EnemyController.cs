@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour {
 	float nextFire = 0;
     private Animator anim;
 	private bool dead = false;
+//	private bool cheat = false;
 
     int DestroyTime = 1;
 
@@ -35,6 +36,10 @@ public class EnemyController : MonoBehaviour {
 				}
 			}
 		}
+
+		//if (Input.GetKeyDown (KeyCode.O)) {
+		//	cheat = true;
+		//}
     }
 
     void OnCollisionEnter2D(Collision2D collision)
