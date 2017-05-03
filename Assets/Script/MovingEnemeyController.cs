@@ -19,7 +19,7 @@ public class MovingEnemeyController : MonoBehaviour
     int direction = 1; //int direction where 0 is stay, 1 up, -1 down    
     int top = 8;
     int bottom = -8;
-    int DestroyTime = 2;
+    int DestroyTime = 1;
 	//bool cheat = false;
 
     // Update is called once per frame
